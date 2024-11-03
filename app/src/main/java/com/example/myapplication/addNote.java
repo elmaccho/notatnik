@@ -1,6 +1,7 @@
 package com.example.myapplication;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
@@ -23,8 +24,6 @@ public class addNote extends AppCompatActivity {
 
     Button backBtn, saveBtn;
     ImageButton addImageBtn;
-
-
     EditText noteTitleET, noteET;
 
     @Override
@@ -38,13 +37,13 @@ public class addNote extends AppCompatActivity {
             return insets;
         });
 
-//        Buttons
+        // Buttons
         backBtn = findViewById(R.id.backBtn);
         saveBtn = findViewById(R.id.saveBtn);
         addImageBtn = findViewById(R.id.addImage_Btn);
         noteImage = findViewById(R.id.noteImage);
 
-//        EditTexts
+        // EditTexts
         noteTitleET = findViewById(R.id.noteTitleET);
         noteET = findViewById(R.id.noteET);
 
@@ -62,9 +61,19 @@ public class addNote extends AppCompatActivity {
             }
 
             private void openGallery() {
-//                Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-//                startActivityForResult(intent, PICK_IMAGE);
+                Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                startActivityForResult(intent, PICK_IMAGE);
             }
         });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == PICK_IMAGE && resultCode == RESULT_OK && data != null) {
+            Uri selectedImageUri = data.getData();
+            noteImage.setImageURI(selectedImageUri);
+        }
     }
 }
