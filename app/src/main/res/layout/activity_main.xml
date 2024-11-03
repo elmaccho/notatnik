@@ -25,11 +25,14 @@
         android:layout_width="80dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        android:background="@drawable/searchbutton"
         android:padding="3dp"
         android:src="@drawable/searchicon"
+        android:backgroundTint="@color/accentDark"
+        android:background="@drawable/searchbutton"
         app:layout_constraintRight_toRightOf="@id/guideline2"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+
+        />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline1"
@@ -49,7 +52,7 @@
         android:id="@+id/addBtn"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:background="@drawable/addbutton"
+        android:background="@drawable/add_note_button"
         android:src="@drawable/plus_svgrepo_com__1_"
         android:textSize="50sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -62,7 +65,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
-        android:text="Kliknij by dodać notatke"
+        android:text="Kliknij + by dodać notatke"
         android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintLeft_toLeftOf="parent"
