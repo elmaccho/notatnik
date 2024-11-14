@@ -74,10 +74,19 @@
         android:fontFamily="monospace"
         />
 
+    <ListView
+        android:id="@+id/notesListView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="@id/guideline1"
+        app:layout_constraintRight_toRightOf="@id/guideline2"
+        app:layout_constraintTop_toTopOf="@+id/notesStartGuideLine"
+        />
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/notesStartGuideLine"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.125" />
+        app:layout_constraintGuide_begin="111dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
